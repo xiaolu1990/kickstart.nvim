@@ -49,3 +49,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Move lines
 vim.keymap.set('n', '<A-j>', '<cmd>m .+1<cr>==', { desc = 'Move line down' })
 vim.keymap.set('n', '<A-k>', '<cmd>m .-2<cr>==', { desc = 'Move line up' })
+
+-- Save File
+vim.keymap.set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
+
+-- Quit
+vim.keymap.set('n', '<C-q>', '<cmd>qa<cr>', { desc = 'Quit' })
