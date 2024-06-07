@@ -16,8 +16,8 @@ return {
         separator_style = 'slant',
         offsets = {
           {
-            filetype = 'neo-tree',
-            text = 'Neo-tree',
+            filetype = 'nvim-tree',
+            text = 'Nvim-tree',
             highlight = 'Directory',
             text_align = 'left',
           },
