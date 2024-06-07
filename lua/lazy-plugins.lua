@@ -1,6 +1,15 @@
 -- [[ Configure and install plugins ]]
 
 require('lazy').setup({
+  -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-sleuth',
+
+  -- Plugin to improve UI
+  {
+    'stevearc/dressing.nvim',
+    event = 'VeryLazy',
+    opts = {},
+  },
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -21,7 +30,7 @@ require('lazy').setup({
 
   require 'kickstart.plugins.gitsigns',
 
-  -- require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.indent_line',
 
   -- require 'kickstart.plugins.lint',
 
@@ -51,4 +60,5 @@ require('lazy').setup({
       lazy = '💤 ',
     },
   },
+  change_detection = { notify = false },
 })

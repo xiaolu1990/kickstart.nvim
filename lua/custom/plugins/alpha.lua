@@ -26,12 +26,12 @@ return {
 
     -- Set menu
     dashboard.section.buttons.val = {
-      dashboard.button('e', '  > New File', '<cmd>ene<CR>'),
+      -- dashboard.button('e', '  > Create new File', '<cmd>ene<CR>'),
       dashboard.button('SPC ee', '  > Toggle file explorer', '<cmd>NvimTreeToggle<CR>'),
-      dashboard.button('SPC sf', '󰱼 > Find File', '<cmd>Telescope find_files<CR>'),
+      dashboard.button('SPC sf', '󰱼  > Find File', '<cmd>Telescope find_files<CR>'),
       dashboard.button('SPC sg', '  > Find Word', '<cmd>Telescope live_grep<CR>'),
       dashboard.button('SPC ur', '󰁯  > Restore Last Session', '<cmd>SessionRestore<CR>'),
-      dashboard.button('SPC qq', ' > Quit NVIM', '<cmd>qa<CR>'),
+      dashboard.button('SPC qq', '  > Quit', '<cmd>qa<CR>'),
     }
 
     -- Give the returned couplet to alpha's footer

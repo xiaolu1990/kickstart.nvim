@@ -9,7 +9,6 @@ return {
       background = 'soft',
       transparent_background_level = 0,
       italics = true,
-      ui_contrast = 'high',
     }
     require('everforest').load()
   end,

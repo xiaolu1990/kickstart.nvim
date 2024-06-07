@@ -1,10 +1,14 @@
--- Highlight, edit, and navigate code
+-- [[ Nvim-treesitter]] A plugin to for syntax highlighting, edit, and navigate code
 
 return {
   'nvim-treesitter/nvim-treesitter',
+  event = { 'BufReadPre', 'BufNewFile' },
   build = ':TSUpdate',
+  dependencies = {
+    'windwp/nvim-ts-autotag',
+  },
   opts = {
-    ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
+    ensure_installed = { 'arduino', 'bash', 'c', 'cpp', 'json', 'latex', 'lua', 'luadoc', 'make', 'markdown', 'python', 'vim', 'vimdoc', 'xml', 'yaml' },
     -- Autoinstall languages that are not installed
     auto_install = true,
     highlight = {
