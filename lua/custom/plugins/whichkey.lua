@@ -31,7 +31,7 @@ return {
         ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
         ['<leader>l'] = { name = '[L]azy', _ = 'which_key_ignore' },
         ['<leader>u'] = { name = '[U]tils', _ = 'which_key_ignore' },
-        ['<leader>e'] = { name = 'File [E]xplorer', _ = 'which_key_ignore' },
+        ['<leader>e'] = { name = '[E]xplorer', _ = 'which_key_ignore' },
       }
       -- visual mode
       require('which-key').register({
