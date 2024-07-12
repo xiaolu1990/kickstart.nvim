@@ -172,6 +172,8 @@ return {
         -- tsserver = {},
         --
 
+        ruff = {},
+
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -202,6 +204,7 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'black', -- Used to format python code
+        'prettier',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

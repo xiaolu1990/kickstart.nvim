@@ -12,9 +12,13 @@ return {
   config = function()
     require('neo-tree').setup {
       window = {
-        position = 'float', -- open as floating window
+        position = 'left', -- left, right, top, bottom, float, current
       },
     }
+
+    -- disable netrw
+    vim.g.loaded_netrwPlugin = 1
+    vim.g.loaded_netrw = 1
 
     -- set keymaps
     local keymap = vim.keymap
