@@ -12,7 +12,7 @@ return {
 
     local keymap = vim.keymap
 
-    keymap.set('n', '<leader>ur', '<cmd>SessionRestore<CR>', { desc = '[R]estore [S]ession' }) -- restore last workspace session for current directory
-    keymap.set('n', '<leader>us', '<cmd>SessionSave<CR>', { desc = '[S]ave [S]ession' }) -- save workspace session for current working directory
+    keymap.set('n', '<leader>ur', '<cmd>SessionRestore<CR>', { desc = '[R]estore session' }) -- restore last workspace session for current directory
+    keymap.set('n', '<leader>us', '<cmd>SessionSave<CR>', { desc = '[S]ave session' }) -- save workspace session for current working directory
   end,
 }

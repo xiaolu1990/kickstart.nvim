@@ -1,43 +1,28 @@
--- NOTE: Plugins can also be configured to run Lua code when they are loaded.
---
--- This is often very useful to both group configuration, as well as handle
--- lazy loading plugins that don't need to be loaded immediately at startup.
---
--- For example, in the following configuration, we use:
---  event = 'VimEnter'
---
--- which loads which-key before all the UI elements are loaded. Events can be
--- normal autocommands events (`:help autocmd-events`).
---
--- Then, because we use the `config` key, the configuration only runs
--- after the plugin has been loaded:
---  config = function() ... end
+-- Plugin to show the available keybindings in a popup window
 
-return {
-  { -- Useful plugin to show you pending keybinds.
-    'folke/which-key.nvim',
-    event = 'VimEnter', -- Sets the loading event to 'VimEnter'
-    config = function() -- This is the function that runs, AFTER loading
-      require('which-key').setup()
-
-      -- Document existing key chains
-      require('which-key').register {
-        ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-        ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]indow', _ = 'which_key_ignore' },
-        ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
-        ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
-        ['<leader>l'] = { name = '[L]azy', _ = 'which_key_ignore' },
-        ['<leader>u'] = { name = '[U]tils', _ = 'which_key_ignore' },
-        ['<leader>e'] = { name = '[E]xplorer', _ = 'which_key_ignore' },
-      }
-      -- visual mode
-      require('which-key').register({
-        ['<leader>h'] = { 'Git [H]unk' },
-      }, { mode = 'v' })
-    end,
+return { -- Useful plugin to show you pending keybinds.
+  'folke/which-key.nvim',
+  event = 'VimEnter', -- Sets the loading event to 'VimEnter'
+  dependencies = { { 'echasnovski/mini.icons', version = false } },
+  opts = {
+    preset = 'modern',
+    icons = { rules = false }, --disable icons
+    spec = {
+      { '<leader>c', group = '[C]ode' },
+      { '<leader>d', group = '[D]ocument' },
+      { '<leader>e', group = '[E]xplorer' },
+      { '<leader>h', group = 'Git [H]unk' },
+      { '<leader>l', group = '[L]azy' },
+      { '<leader>q', group = '[Q]uit' },
+      { '<leader>r', group = '[R]ename' },
+      { '<leader>s', group = '[S]earch' },
+      { '<leader>t', group = '[T]oggle' },
+      { '<leader>u', group = '[U]tils' },
+      { '<leader>w', group = '[W]indow' },
+      { '<leader>h', desc = 'Git [H]unk', mode = 'v' },
+    },
   },
 }
+-- require('which-key').add }
+
 -- vim: ts=2 sts=2 sw=2 et
