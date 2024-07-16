@@ -14,6 +14,24 @@ return {
       window = {
         position = 'left', -- left, right, top, bottom, float, current
       },
+      filesystem = {
+        filtered_items = {
+          visible = false,
+          hide_dotfiles = false,
+          show_hidden_count = true,
+          hide_gitignored = true,
+          hide_by_name = { '.git', '.DS_Store', 'thumbs.db' },
+        },
+      },
+      event_handlers = {
+        {
+          event = 'neo_tree_buffer_enter',
+          handler = function()
+            -- show relative number in the neo-tree window
+            vim.opt_local.relativenumber = true
+          end,
+        },
+      },
     }
 
     -- disable netrw
